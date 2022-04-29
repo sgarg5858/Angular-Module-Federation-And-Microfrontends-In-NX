@@ -1,0 +1,24 @@
+<ng-container *ngIf="(postService.posts$ | async) as posts;else showLoading">
+    <h1>Posts:</h1>
+
+    <angular-microfrontends-filter-posts (filter)="filter($event)" *ngIf="postService.didApiWork">
+    </angular-microfrontends-filter-posts>
+
+    <ng-container *ngIf=" posts.length > 0; else noPostsToShow">
+        <angular-microfrontends-posts [posts]="posts">
+        </angular-microfrontends-posts>
+    </ng-container>
+
+     <ng-template #noPostsToShow>
+        <h2>
+         {{   postService.didApiWork ? "No Matching Posts" : "Something Went Wrong" }}
+        </h2>
+    </ng-template>
+  
+</ng-container>
+
+
+<ng-template #showLoading>
+    <h1>  Loading Posts.....</h1>
+  </ng-template>
+

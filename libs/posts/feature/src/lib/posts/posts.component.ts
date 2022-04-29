@@ -1,5 +1,5 @@
 import { Post, PostService } from '@angular-microfrontends/posts/data-access';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'angular-microfrontends-posts',
@@ -7,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts.component.scss'],
 })
 export class PostsComponent implements OnInit {
-  constructor(public postService:PostService) {}
+ 
+  @Input() posts:Post[]=[];
 
-  ngOnInit(): void {
-    this.postService.getPosts();
-  }
   postClicked(post:Post)
-  {console.log(post);
+  {
+    console.log(post);
   }
+  ngOnInit(): void {
+ }
 }
