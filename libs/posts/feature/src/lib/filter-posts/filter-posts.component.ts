@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, Subscription } from 'rxjs';
 
@@ -6,6 +6,7 @@ import { debounceTime, distinctUntilChanged, Subscription } from 'rxjs';
   selector: 'angular-microfrontends-filter-posts',
   templateUrl: './filter-posts.component.html',
   styleUrls: ['./filter-posts.component.scss'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class FilterPostsComponent implements OnInit,OnDestroy {
   constructor() {}
