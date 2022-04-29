@@ -1,18 +1,20 @@
 import { Post, PostService } from '@angular-microfrontends/posts/data-access';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'angular-microfrontends-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class PostsComponent implements OnInit {
-  constructor(public postService:PostService) {}
+ 
+  @Input() posts:Post[]=[];
 
-  ngOnInit(): void {
-    this.postService.getPosts();
-  }
   postClicked(post:Post)
-  {console.log(post);
+  {
+    console.log(post);
   }
+  ngOnInit(): void {
+ }
 }

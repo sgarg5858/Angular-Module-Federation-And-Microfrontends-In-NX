@@ -1,12 +1,13 @@
 import { Post } from '@angular-microfrontends/posts/data-access';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'angular-microfrontends-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
+
 })
-export class PostComponent implements OnInit {
+export class PostComponent implements OnInit,OnDestroy {
   constructor() {}
   @Input() post:Post|undefined;
   @Output()postClicked = new EventEmitter<Post>();
@@ -16,4 +17,6 @@ export class PostComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+  ngOnDestroy(): void {
+  }
 }
