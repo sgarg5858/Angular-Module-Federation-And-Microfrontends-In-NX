@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@angular-microfrontends/posts/data-access": [
+        "libs/posts/data-access/src/index.ts"
+      ],
+      "@angular-microfrontends/posts/feature": [
+        "libs/posts/feature/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

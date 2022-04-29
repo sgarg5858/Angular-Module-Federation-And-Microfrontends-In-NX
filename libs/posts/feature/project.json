@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/posts/feature",
+  "sourceRoot": "libs/posts/feature/src",
+  "prefix": "angular-microfrontends",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/posts/feature"],
+      "options": {
+        "jestConfig": "libs/posts/feature/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/posts/feature/**/*.ts",
+          "libs/posts/feature/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

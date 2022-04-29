@@ -1,0 +1,22 @@
+<ng-container *ngIf="(postService.posts$ | async) as posts;else showLoading">
+    <h1>Posts:</h1>
+    
+    <ng-container *ngIf="posts.length > 0; else apiFailed">
+        <angular-microfrontends-post 
+        [post]="post" 
+        (postClicked)="postClicked($event)" 
+        *ngFor="let post of posts"
+        ></angular-microfrontends-post>
+    </ng-container>
+
+    <ng-template #apiFailed>
+        <h2>
+        Couldn't load post right now something went wrong!
+        </h2>
+    </ng-template>
+
+</ng-container>
+
+<ng-template #showLoading>
+  <h1>  Loading Posts.....</h1>
+</ng-template>

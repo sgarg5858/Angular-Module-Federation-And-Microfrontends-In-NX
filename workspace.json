@@ -1,4 +1,21 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "albums": "apps/albums",
+    "albums-e2e": "apps/albums-e2e",
+    "comments": "apps/comments",
+    "comments-e2e": "apps/comments-e2e",
+    "photos": "apps/photos",
+    "photos-e2e": "apps/photos-e2e",
+    "posts": "apps/posts",
+    "posts-data-access": "libs/posts/data-access",
+    "posts-e2e": "apps/posts-e2e",
+    "posts-feature": "libs/posts/feature",
+    "shell": "apps/shell",
+    "shell-e2e": "apps/shell-e2e",
+    "todos": "apps/todos",
+    "todos-e2e": "apps/todos-e2e",
+    "users": "apps/users",
+    "users-e2e": "apps/users-e2e"
+  }
 }
